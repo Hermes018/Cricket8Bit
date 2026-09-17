@@ -2,3 +2,5 @@ fastapi
 uvicorn
 websockets
 PyJWT
+sqlmodel==0.0.16
+

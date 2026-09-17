@@ -9,7 +9,10 @@ extends Control
 @onready var btn_nearby_search = $VBoxContainer/BtnNearbySearch
 @onready var label_nearby_status = $VBoxContainer/LabelNearbyStatus
 
+@onready var btn_campaign = $VBoxContainer/BtnCampaign
+
 func _ready():
+	btn_campaign.pressed.connect(_on_campaign)
 	btn_quick_match.pressed.connect(_on_quick_match)
 	btn_host_lan.pressed.connect(_on_host_lan)
 	btn_join_lan.pressed.connect(_on_join_lan)
@@ -21,6 +24,9 @@ func _ready():
 	NetworkManager.connected_to_server.connect(_on_connected_to_server)
 	NetworkManager.offline_peer_found.connect(_on_offline_peer_found)
 	NetworkManager.offline_connected.connect(_on_offline_connected)
+
+func _on_campaign():
+	get_tree().change_scene_to_file("res://src/client/ui/campaign/campaign_menu.tscn")
 
 func _on_quick_match():
 	get_tree().change_scene_to_file("res://src/client/ui/match_setup.tscn")

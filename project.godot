@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 GameManager="*res://src/core/game_manager.gd"
 NetworkManager="*res://src/core/network_manager.gd"
 DataLoader="*res://src/core/data_loader.gd"
+EconomyManager="*res://src/core/economy_manager.gd"
 [display]
 
 window/size/viewport_width=720

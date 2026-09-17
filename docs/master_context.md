@@ -62,3 +62,10 @@ We use a platform-agnostic `OfflineMultiplayerInterface` abstraction:
 - **iOS (Phase 10 deferred)**: Will add `MultipeerConnectivityBridge` conforming to the same interface — zero call-site changes required.
 - `NetworkManager` auto-selects the provider at startup based on `OS.get_name()` and `Engine.has_singleton()`.
 - Serialization: game state packets use Godot's `var_to_bytes()`/`bytes_to_var()` for cross-platform safety.
+
+### Architecture Update Phase 8 (Card/Lootbox Campaign) 
+We use a persistent SQLite database driven by FastAPI and SQLModel. 
+- **Backend Models**: `User` (username, virtual_currency_balance), `CardTemplate` (player_id, rarity_tier), and `UserInventory` (junction table).
+- **Endpoints**: `GET /inventory` and `POST /store/buy_pack`.
+- **Lootbox RNG**: Weighted logic resolves pack drops on the backend (70% Common, 25% Rare, 5% Epic) to prevent client spoofing.
+- **Godot Client**: `EconomyManager` Autoload handles JWT authentication and HTTP request state. UI layers (`CampaignMenu`, `StoreUI`, `PackOpeningUI`) respond to custom signals (`auth_completed`, `inventory_updated`, `pack_purchased`) to decouple rendering from netcode.

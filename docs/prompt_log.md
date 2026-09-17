@@ -22,3 +22,5 @@ See `docs/master_context.md`
 - 2026-09-18: User prompt: Execute Phase 6 (Android Nearby Connections Bridge). Outcome: Full P2P abstraction layer with mock, native Kotlin plugin, GDScript bridge, and headless test verification.
 
 - 2026-09-18: User prompt: Execute Phase 7 (Real Roster & Team Data Integration). Outcome: Built JSON schemas, payload database, DataLoader Autoload, and wired them across UI and match state. Real player names and handedness logic now drive the animations.
+
+- 2026-09-18: User prompt: Execute Phase 8 (Card/Lootbox Campaign Meta System). Outcome: Persistent database implemented in Python via SQLModel. Godot client integrated with HTTPRequest Autoload. Created full UI flow from Main Menu -> Campaign -> Store -> Pack Opening Animation. Verified successful transaction and VC deduction.

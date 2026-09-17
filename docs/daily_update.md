@@ -24,3 +24,5 @@ See `docs/master_context.md`
 - 2026-09-18: Done: Phase 6 (Offline P2P via Nearby Connections). Built abstract interface, mock provider, Kotlin Android plugin (P2P_STAR, BLE/Wi-Fi Direct), GDScript bridge, and NetworkManager auto-detection. Headless test suite: all assertions passed.
 
 - 2026-09-18: Done: Phase 7 (Data Integration). Built DataLoader singleton, JSON database with player roles and handing, MatchSetup dynamic dropdowns, and MatchEngine roster injection. Validated handedness injection into AnimationController.
+
+- 2026-09-18: Done: Phase 8 (Card/Lootbox Meta System). Built FastAPI backend with SQLModel tables (User, CardTemplate, UserInventory). Implemented weighted RNG packs. Created EconomyManager Autoload, StoreUI, and PackOpeningUI. Verified end-to-end purchasing loop.
