@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/client/ui/field_placement_ui.gd" id="1_zzz"]
+[ext_resource type="Script" path="res://src/client/ui/field_radar.gd" id="2_rad"]
+
+[node name="FieldPlacementUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_zzz")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "CUSTOM FIELD PLACEMENT
+Drag and drop fielders onto the radar"
+horizontal_alignment = 1
+
+[node name="Radar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.6, 0.2, 1)
+script = ExtResource("2_rad")
+
+[node name="Pitch" type="ColorRect" parent="Radar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -40.0
+offset_right = 10.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.7, 0.5, 1)
+
+[node name="Circle30Yd" type="ReferenceRect" parent="Radar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(1, 1, 1, 0.5)
+border_width = 2.0
+editor_only = false
+
+[node name="BtnProceed" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = -30.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "PLAY MATCH"

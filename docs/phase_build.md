@@ -28,8 +28,8 @@
 - [x] **Phase 3b**: Advanced Authentic Cricket mechanics (Wicketkeeper, Stumps nodes, LBW appeals, Third Umpire TV delays, bails flying).
 
 ## Phase 4
-- [ ] Menu system, match setup flow, custom fielding placement UI, scorecard/stats screens.
-- [ ] Exit check: End-to-end (menu -> setup -> play -> scorecard) no crashes, offline verified.
+- [x] Menu system, match setup flow, custom fielding placement UI, scorecard/stats screens.
+- [x] Exit check: Full match simulation completed through UI with airplane mode enabled (offline-first compliance).
 
 ## Phase 5
 - [ ] Multiplayer: LAN/hotspot via ENet first (Android).

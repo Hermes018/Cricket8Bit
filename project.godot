@@ -11,10 +11,13 @@ config_version=5
 [application]
 
 config/name="Cricket8Bit"
-run/main_scene="res://src/client/match_view.tscn"
+run/main_scene="res://src/client/ui/main_menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.png"
 
+[autoload]
+
+GameManager="*res://src/core/game_manager.gd"
 [display]
 
 window/size/viewport_width=720
