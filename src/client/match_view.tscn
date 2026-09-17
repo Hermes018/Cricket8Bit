@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://src/client/match_view.gd" id="1_abc"]
 [ext_resource type="PackedScene" path="res://src/client/ui/scorecard_ui.tscn" id="2_def"]
 [ext_resource type="Script" path="res://src/client/animation_controller.gd" id="3_ghi"]
+[ext_resource type="Script" path="res://src/client/simple_ball_physics.gd" id="4_bp"]
+[ext_resource type="Script" path="res://src/client/input_router.gd" id="5_ir"]
 
 [node name="MatchView" type="Node2D"]
 script = ExtResource("1_abc")
@@ -58,13 +60,6 @@ scale = Vector2(3, 3)
 position = Vector2(400, 250)
 scale = Vector2(3, 3)
 
-[node name="BowlButton" type="Button" parent="."]
-offset_left = 450.0
-offset_top = 650.0
-offset_right = 650.0
-offset_bottom = 700.0
-text = "BOWL BALL"
-
 [node name="AnimationController" type="Node" parent="." node_paths=PackedStringArray("bowler_sprite", "batsman_sprite", "fielder_sprite", "umpire_sprite", "crowd_sprite", "keeper_sprite", "stumps_sprite")]
 script = ExtResource("3_ghi")
 bowler_sprite = NodePath("../Pitch/Bowler")
@@ -74,3 +69,32 @@ umpire_sprite = NodePath("../Pitch/Umpire")
 crowd_sprite = NodePath("../Pitch/Crowd")
 keeper_sprite = NodePath("../Pitch/Wicketkeeper")
 stumps_sprite = NodePath("../Pitch/Stumps")
+
+[node name="BallPhysics" type="Node2D" parent="."]
+script = ExtResource("4_bp")
+
+[node name="InputRouter" type="Node" parent="."]
+script = ExtResource("5_ir")
+
+[node name="PitchCursor" type="ColorRect" parent="."]
+offset_left = 540.0
+offset_top = 350.0
+offset_right = 556.0
+offset_bottom = 366.0
+color = Color(1, 0.2, 0.2, 0.8)
+
+[node name="ReleaseMeterBG" type="ColorRect" parent="."]
+visible = false
+offset_left = 180.0
+offset_top = 200.0
+offset_right = 210.0
+offset_bottom = 500.0
+color = Color(0.2, 0.2, 0.2, 0.9)
+
+[node name="ReleaseMeterFill" type="ColorRect" parent="."]
+visible = false
+offset_left = 182.0
+offset_top = 200.0
+offset_right = 208.0
+offset_bottom = 500.0
+color = Color(0.1, 0.9, 0.2, 1)

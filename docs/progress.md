@@ -11,3 +11,4 @@
 
 ---
 See `docs/master_context.md`
+- 2026-09-18 Phase 5c — 2.5D ball physics implemented (SimpleBallPhysics with altitude scalar and ground shadow). Bowling pitch cursor and release meter replace the debug button. InputRouter captures direction/type/timing and feeds into authoritative MatchEngine via submit_shot(). Phase 5c exit check met.

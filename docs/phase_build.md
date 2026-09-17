@@ -36,6 +36,13 @@
 - [x] Python backend (FastAPI, WebSockets, Redis queue) for global matchmaking.
 - [x] Exit check: Connect 2 clients over LAN; start match. Matchmake 2 web clients globally.tch over internet relay (including one browser client).
 
+## Phase 5c: SimpleBallPhysics & Interactive Controls
+- [x] 2.5D ball trajectory engine (SimpleBallPhysics) with altitude scalar + ground shadow.
+- [x] Bowling pitch cursor (length/line placement) and release timing meter.
+- [x] Batting InputRouter with direction, shot type, and timing-window quality resolution.
+- [x] MatchEngine refactored: `bowl_ball_with_params()`, `submit_shot()`, `AWAITING_SHOT` state.
+- [x] Exit check: Interactive over runs in Godot client; cursor dictates bounce, ball arcs in 2.5D, timed swing resolves into scorecard.
+
 ## Phase 6
 - [ ] Fully-offline local P2P via native Android Nearby Connections plugin.
 - [ ] Exit check: Two Android devices match with no network at all.

@@ -18,3 +18,5 @@ See `docs/master_context.md`
 - 2026-09-18: Done: Executed Phase 4 (UI & End-to-End Match Flow). Created GameManager autoload, MainMenu, MatchSetup (Toss simulator), FieldPlacement UI with Drag and Drop, and overhauled ScorecardUI. The full game loop transitions correctly and offline constraint remains fully intact.
 
 - 2026-09-18: Done: Executed Phase 5 (Multiplayer Backend). Created FastAPI python backend for JWT and Matchmaking. Godot now uses a strict dual-transport protocol (ENet for offline LAN and WebSocket for Online) via NetworkManager. MatchEngine refactored to serve as the Headless Godot Authority passing states via RPCs to connected MatchViews.
+
+- 2026-09-18: Done: Phase 5c (SimpleBallPhysics and Interactive Controls). Built 2.5D trajectory engine with parabolic arcs, swing/spin modifiers, and ground shadow tracking. Implemented Cricket-07-style pitch cursor and release timing meter. Created InputRouter with timing-window quality evaluation (perfect/good/mistimed/miss). MatchEngine now uses bowl_ball_with_params and submit_shot RPCs.
