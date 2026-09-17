@@ -47,7 +47,11 @@ func start_over():
 	current_state = State.BALL_READY
 	emit_signal("over_started", state.total_overs + 1)
 
+@rpc("any_peer", "call_local", "reliable")
 func bowl_ball():
+	if not multiplayer.is_server():
+		return
+		
 	if current_state != State.BALL_READY:
 		return
 	
@@ -55,7 +59,6 @@ func bowl_ball():
 	emit_signal("ball_bowled")
 	
 	# In Phase 1 headless, we auto-resolve after a tiny delay or instantly.
-	# We'll resolve instantly for headless simulation.
 	call_deferred("resolve_ball")
 
 func resolve_ball():
@@ -64,27 +67,39 @@ func resolve_ball():
 		
 	# Phase 1: Pure RNG stat resolution
 	var rand = randf()
-	if rand < 0.05: # 5% chance of wicket
-		state.add_wicket()
-		emit_signal("wicket_fallen", "bowled")
-	elif rand < 0.20: # 15% chance of dot ball
-		emit_signal("runs_scored", 0, false)
-	elif rand < 0.60: # 40% chance of 1 run
-		state.add_runs(1)
-		emit_signal("runs_scored", 1, false)
-		state.swap_strike()
-	elif rand < 0.80: # 20% chance of 2 runs
-		state.add_runs(2)
-		emit_signal("runs_scored", 2, false)
-	elif rand < 0.90: # 10% chance of 4 runs
-		state.add_runs(4)
-		emit_signal("runs_scored", 4, false)
-	else: # 10% chance of 6 runs
-		state.add_runs(6)
-		emit_signal("runs_scored", 6, false)
+	var runs = 0
+	var is_extra = false
+	var wicket_type = ""
 	
+	if rand < 0.05: # 5% chance of wicket
+		wicket_type = "bowled"
+	elif rand < 0.20: # 15% chance of dot ball
+		runs = 0
+	elif rand < 0.60: # 40% chance of 1 run
+		runs = 1
+	elif rand < 0.80: # 20% chance of 2 runs
+		runs = 2
+	elif rand < 0.90: # 10% chance of 4 runs
+		runs = 4
+	else: # 10% chance of 6 runs
+		runs = 6
+		
+	rpc("client_sync_outcome", runs, is_extra, wicket_type)
+
+@rpc("authority", "call_local", "reliable")
+func client_sync_outcome(runs: int, is_extra: bool, wicket_type: String):
+	if wicket_type != "":
+		state.add_wicket()
+		emit_signal("wicket_fallen", wicket_type)
+	else:
+		state.add_runs(runs)
+		emit_signal("runs_scored", runs, is_extra)
+		if runs % 2 != 0:
+			state.swap_strike()
+			
 	state.add_ball()
 	current_state = State.BALL_RESOLVED
+
 	
 	_check_state_transitions()
 

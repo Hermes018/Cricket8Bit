@@ -48,3 +48,9 @@
 
 ---
 See `docs/master_context.md` for this snapshot.
+
+### Architecture Update Phase 5 (Multiplayer) 
+We use a Strict Dual-Transport protocol:
+- **Local LAN / Android Hotspot**: Uses `ENetMultiplayerPeer` for low-overhead offline mobile play.
+- **Global Matchmaking**: Connects via a Python FastAPI backend acting as a JWT broker and queue. Clients use `WebSocketMultiplayerPeer` exclusively to connect to Godot Headless dedicated servers. 
+- **Authority**: The `MatchEngine` runs deterministically on the server. Outcomes are synchronized to clients strictly via `@rpc('authority')` calls, preventing any client-side divergence.

@@ -32,9 +32,9 @@
 - [x] Exit check: Full match simulation completed through UI with airplane mode enabled (offline-first compliance).
 
 ## Phase 5
-- [ ] Multiplayer: LAN/hotspot via ENet first (Android).
-- [ ] Multiplayer: Online via WebSocket + headless Godot server behind FastAPI.
-- [ ] Exit check: Two Android clients match over LAN; two clients match over internet relay (including one browser client).
+- [x] Multiplayer: LAN/hotspot via ENet first (Android).
+- [x] Python backend (FastAPI, WebSockets, Redis queue) for global matchmaking.
+- [x] Exit check: Connect 2 clients over LAN; start match. Matchmake 2 web clients globally.tch over internet relay (including one browser client).
 
 ## Phase 6
 - [ ] Fully-offline local P2P via native Android Nearby Connections plugin.
