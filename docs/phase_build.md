@@ -7,12 +7,12 @@
 - [x] Exit check: Web export succeeds and passes offline-reload test. Android export succeeds locally (or via CI).
 
 ## Phase 1
-- [ ] MatchEngine core loop for one format (T20).
-- [ ] Placeholder capsule/stick sprites.
-- [ ] Scoring + wickets + overs logic.
-- [ ] Can compile as a headless server target.
-- [ ] Zero network calls on the single-player path.
-- [ ] Exit check: Full T20 innings can be simulated headless; single-player runs fully offline.
+- [x] MatchEngine core loop for one format (T20).
+- [x] Placeholder capsule/stick sprites.
+- [x] Scoring + wickets + overs logic.
+- [x] Written so it can also compile as a headless server target.
+- [x] Zero network calls on the single-player path.
+- [x] Exit check: A full T20 innings can be simulated headless and scorecard is correct; single-player runs with the device/network fully disabled.
 
 ## Phase 2
 - [ ] Pixel art pipeline decided.
