@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://src/client/match_view.gd" id="1_abc"]
 [ext_resource type="PackedScene" path="res://src/client/ui/scorecard_ui.tscn" id="2_def"]
+[ext_resource type="Script" path="res://src/client/animation_controller.gd" id="3_ghi"]
 
 [node name="MatchView" type="Node2D"]
 script = ExtResource("1_abc")
@@ -29,21 +30,13 @@ offset_top = 420.0
 offset_right = 400.0
 offset_bottom = 425.0
 
-[node name="Batsman" type="ColorRect" parent="Pitch"]
-layout_mode = 0
-offset_left = 225.0
-offset_top = 400.0
-offset_right = 255.0
-offset_bottom = 480.0
-color = Color(0.1, 0.1, 0.8, 1)
+[node name="Batsman" type="AnimatedSprite2D" parent="Pitch"]
+position = Vector2(240, 440)
+scale = Vector2(3, 3)
 
-[node name="Bowler" type="ColorRect" parent="Pitch"]
-layout_mode = 0
-offset_left = 225.0
-offset_top = 20.0
-offset_right = 255.0
-offset_bottom = 100.0
-color = Color(0.8, 0.1, 0.1, 1)
+[node name="Bowler" type="AnimatedSprite2D" parent="Pitch"]
+position = Vector2(240, 60)
+scale = Vector2(3, 3)
 
 [node name="BowlButton" type="Button" parent="."]
 offset_left = 450.0
@@ -51,3 +44,8 @@ offset_top = 650.0
 offset_right = 650.0
 offset_bottom = 700.0
 text = "BOWL BALL"
+
+[node name="AnimationController" type="Node" parent="." node_paths=PackedStringArray("bowler_sprite", "batsman_sprite")]
+script = ExtResource("3_ghi")
+bowler_sprite = NodePath("../Pitch/Bowler")
+batsman_sprite = NodePath("../Pitch/Batsman")

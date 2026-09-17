@@ -6,3 +6,5 @@
 See `docs/master_context.md`
 
 - 2026-09-18: User prompt: authenticated via Windows Credential Manager. Outcome: Confirmed GitHub push success, verified Phase 0 completion, drafted Phase 1 implementation plan.
+
+- 2026-09-18: User prompt: Execute Phase 2 (Pixel Art Pipeline). Outcome: Procured placeholder sprites, authored ASSETS.md and animations.md, and integrated AnimationController successfully.

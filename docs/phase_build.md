@@ -15,10 +15,10 @@
 - [x] Exit check: A full T20 innings can be simulated headless and scorecard is correct; single-player runs with the device/network fully disabled.
 
 ## Phase 2
-- [ ] Pixel art pipeline decided.
-- [ ] `docs/animations.md` full clip list authored.
-- [ ] First right-handed batsman/bowler animation pair implemented.
-- [ ] Exit check: Visual playtest of one over with real sprites.
+- [x] Pixel art pipeline decided.
+- [x] `docs/animations.md` full clip list authored.
+- [x] First right-handed batsman/bowler animation pair implemented.
+- [x] Exit check: Visual playtest of one over with real sprites.
 
 ## Phase 3
 - [ ] Full animation matrix implemented.
