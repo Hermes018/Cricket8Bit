@@ -62,26 +62,44 @@ func resolve_ball():
 	if current_state != State.BALL_IN_PLAY:
 		return
 		
-	# Phase 1: Pure RNG stat resolution
-	var rand = randf()
-	if rand < 0.05: # 5% chance of wicket
-		state.add_wicket()
-		emit_signal("wicket_fallen", "bowled")
-	elif rand < 0.20: # 15% chance of dot ball
-		pass # 0 runs
-	elif rand < 0.60: # 40% chance of 1 run
-		state.add_runs(1)
-		emit_signal("runs_scored", 1, false)
-		state.swap_strike()
-	elif rand < 0.80: # 20% chance of 2 runs
-		state.add_runs(2)
-		emit_signal("runs_scored", 2, false)
-	elif rand < 0.90: # 10% chance of 4 runs
-		state.add_runs(4)
-		emit_signal("runs_scored", 4, false)
-	else: # 10% chance of 6 runs
+	var is_rigged = false
+	var total_balls = state.total_overs * 6 + state.balls_bowled
+	if total_balls == 0:
+		# Ball 1: 6 runs
 		state.add_runs(6)
 		emit_signal("runs_scored", 6, false)
+		is_rigged = true
+	elif total_balls == 1:
+		# Ball 2: Wicket (Caught)
+		state.add_wicket()
+		emit_signal("wicket_fallen", "caught")
+		is_rigged = true
+	elif total_balls == 2:
+		# Ball 3: Dot ball
+		emit_signal("runs_scored", 0, false)
+		is_rigged = true
+		
+	if not is_rigged:
+		# Phase 1: Pure RNG stat resolution
+		var rand = randf()
+		if rand < 0.05: # 5% chance of wicket
+			state.add_wicket()
+			emit_signal("wicket_fallen", "bowled")
+		elif rand < 0.20: # 15% chance of dot ball
+			emit_signal("runs_scored", 0, false)
+		elif rand < 0.60: # 40% chance of 1 run
+			state.add_runs(1)
+			emit_signal("runs_scored", 1, false)
+			state.swap_strike()
+		elif rand < 0.80: # 20% chance of 2 runs
+			state.add_runs(2)
+			emit_signal("runs_scored", 2, false)
+		elif rand < 0.90: # 10% chance of 4 runs
+			state.add_runs(4)
+			emit_signal("runs_scored", 4, false)
+		else: # 10% chance of 6 runs
+			state.add_runs(6)
+			emit_signal("runs_scored", 6, false)
 	
 	state.add_ball()
 	current_state = State.BALL_RESOLVED

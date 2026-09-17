@@ -56,12 +56,12 @@ func _on_innings_started(innings: int):
 
 func _on_runs_scored(amount: int, is_extra: bool):
 	print("Client: Scored ", amount)
-	animation_controller.play_bat_swing()
+	animation_controller.play_outcome(amount, "")
 	_update_ui()
 	
 func _on_wicket_fallen(type: String):
-	print("Client: WICKET")
-	animation_controller.play_bat_swing()
+	print("Client: WICKET ", type)
+	animation_controller.play_outcome(0, type)
 	_update_ui()
 
 func _on_over_complete(over: int):

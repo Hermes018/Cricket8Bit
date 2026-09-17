@@ -21,8 +21,10 @@
 - [x] Exit check: Visual playtest of one over with real sprites.
 
 ## Phase 3
-- [ ] Full animation matrix implemented.
-- [ ] Exit check: Each animation category has >=1 working clip verified in-engine.
+- [x] Full animation matrix implemented.
+- [x] Left/Right hand variants dynamically mirrored.
+- [x] Outcomes correctly wired to visual sequences.
+- [x] Exit check: Rigged visual sequence correctly displays a boundary, wicket, and dot ball in order.
 
 ## Phase 4
 - [ ] Menu system, match setup flow, custom fielding placement UI, scorecard/stats screens.

@@ -10,3 +10,5 @@ See `docs/master_context.md`
 - 2026-09-18: Done: Executed Phase 1 (MatchEngine core loop). Built headless simulation logic and integrated basic visual client placeholders. Verified T20 match simulations via headless command line. Next step: Begin Phase 2 (Pixel Art Pipeline).
 
 - 2026-09-18: Done: Executed Phase 2 (Pixel Art Pipeline & First Sprite Implementation). Generated 32x32 CC0 placeholder sprites, authored animation matrix, and built AnimationController. Verified visual sync with MatchEngine. Next step: Begin Phase 3.
+
+- 2026-09-18: Done: Executed Phase 3 (Full Animation Matrix). Expanded procedural sprite generation for all roles (Batsman, Bowler, Fielder, Umpire, Crowd). Updated AnimationController to map engine outcomes to complex visual sequences. Verified rigged test (6, Wicket, Dot). Next step: Begin Phase 4.
