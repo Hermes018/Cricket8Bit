@@ -54,8 +54,12 @@
 - [x] Exit check: Mock provider simulates two air-gapped peers completing a match handshake with zero network sockets.
 
 ## Phase 7
-- [ ] Real roster/team data integration.
-- [ ] Exit check: Data loads without code changes.
+- [x] Data Schemas (`src/data/schemas/`): `player_schema.json` and `team_schema.json`.
+- [x] Initial JSON Payload (`src/data/db/roster.json`): Team A (Dhaka) and Team B (Generic Giants).
+- [x] DataLoader Autoload (`src/core/data_loader.gd`): JSON parser singleton.
+- [x] UI & Engine Wiring: MatchSetup queries DataLoader; MatchEngine pulls players into batting/fielding arrays.
+- [x] MatchView injects `bat_hand` to AnimationController.
+- [x] Exit check: Data loads without code changes, player names correctly show up in scorecard UI.
 
 ## Phase 8
 - [ ] Card/lootbox campaign meta system.

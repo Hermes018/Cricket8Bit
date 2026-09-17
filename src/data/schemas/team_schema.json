@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Team",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "team_name": {
+      "type": "string"
+    },
+    "abbreviation": {
+      "type": "string"
+    },
+    "player_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 11,
+      "maxItems": 11
+    }
+  },
+  "required": ["id", "team_name", "abbreviation", "player_ids"]
+}

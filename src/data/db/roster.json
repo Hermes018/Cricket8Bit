@@ -1,0 +1,65 @@
+{
+  "teams": [
+    {
+      "id": "team_dhaka",
+      "team_name": "Dhaka Dynamites",
+      "abbreviation": "DHK",
+      "player_ids": [
+        "p_ayman",
+        "p_ishmum",
+        "p_siam",
+        "p_ettihad",
+        "p_fadi",
+        "p_dhaka_6",
+        "p_dhaka_7",
+        "p_dhaka_8",
+        "p_dhaka_9",
+        "p_dhaka_10",
+        "p_dhaka_11"
+      ]
+    },
+    {
+      "id": "team_generic",
+      "team_name": "Generic Giants",
+      "abbreviation": "GEN",
+      "player_ids": [
+        "p_gen_1",
+        "p_gen_2",
+        "p_gen_3",
+        "p_gen_4",
+        "p_gen_5",
+        "p_gen_6",
+        "p_gen_7",
+        "p_gen_8",
+        "p_gen_9",
+        "p_gen_10",
+        "p_gen_11"
+      ]
+    }
+  ],
+  "players": [
+    {"id": "p_ayman", "name": "Ayman", "role": "All-Rounder", "bat_hand": "R", "bowl_type": "Pace", "skill_rating": 85},
+    {"id": "p_ishmum", "name": "Ishmum", "role": "Batsman", "bat_hand": "R", "bowl_type": "Spin", "skill_rating": 82},
+    {"id": "p_siam", "name": "Siam", "role": "Bowler", "bat_hand": "L", "bowl_type": "Pace", "skill_rating": 88},
+    {"id": "p_ettihad", "name": "Ettihad", "role": "Batsman", "bat_hand": "R", "bowl_type": "None", "skill_rating": 80},
+    {"id": "p_fadi", "name": "Fadi", "role": "All-Rounder", "bat_hand": "L", "bowl_type": "Pace", "skill_rating": 84},
+    {"id": "p_dhaka_6", "name": "Dhaka P6", "role": "Wicketkeeper", "bat_hand": "R", "bowl_type": "None", "skill_rating": 75},
+    {"id": "p_dhaka_7", "name": "Dhaka P7", "role": "Batsman", "bat_hand": "R", "bowl_type": "None", "skill_rating": 70},
+    {"id": "p_dhaka_8", "name": "Dhaka P8", "role": "All-Rounder", "bat_hand": "R", "bowl_type": "Spin", "skill_rating": 72},
+    {"id": "p_dhaka_9", "name": "Dhaka P9", "role": "Bowler", "bat_hand": "R", "bowl_type": "Pace", "skill_rating": 78},
+    {"id": "p_dhaka_10", "name": "Dhaka P10", "role": "Bowler", "bat_hand": "L", "bowl_type": "Spin", "skill_rating": 77},
+    {"id": "p_dhaka_11", "name": "Dhaka P11", "role": "Bowler", "bat_hand": "R", "bowl_type": "Pace", "skill_rating": 74},
+
+    {"id": "p_gen_1", "name": "Gen P1", "role": "Batsman", "bat_hand": "R", "bowl_type": "None", "skill_rating": 70},
+    {"id": "p_gen_2", "name": "Gen P2", "role": "Batsman", "bat_hand": "L", "bowl_type": "None", "skill_rating": 71},
+    {"id": "p_gen_3", "name": "Gen P3", "role": "Batsman", "bat_hand": "R", "bowl_type": "None", "skill_rating": 75},
+    {"id": "p_gen_4", "name": "Gen P4", "role": "Batsman", "bat_hand": "R", "bowl_type": "None", "skill_rating": 76},
+    {"id": "p_gen_5", "name": "Gen P5", "role": "All-Rounder", "bat_hand": "R", "bowl_type": "Pace", "skill_rating": 72},
+    {"id": "p_gen_6", "name": "Gen P6", "role": "Wicketkeeper", "bat_hand": "R", "bowl_type": "None", "skill_rating": 78},
+    {"id": "p_gen_7", "name": "Gen P7", "role": "All-Rounder", "bat_hand": "L", "bowl_type": "Spin", "skill_rating": 74},
+    {"id": "p_gen_8", "name": "Gen P8", "role": "Bowler", "bat_hand": "R", "bowl_type": "Pace", "skill_rating": 80},
+    {"id": "p_gen_9", "name": "Gen P9", "role": "Bowler", "bat_hand": "R", "bowl_type": "Spin", "skill_rating": 79},
+    {"id": "p_gen_10", "name": "Gen P10", "role": "Bowler", "bat_hand": "L", "bowl_type": "Pace", "skill_rating": 77},
+    {"id": "p_gen_11", "name": "Gen P11", "role": "Bowler", "bat_hand": "R", "bowl_type": "Pace", "skill_rating": 81}
+  ]
+}

@@ -20,3 +20,5 @@ See `docs/master_context.md`
 - 2026-09-18: User prompt: Execute Phase 5c (2.5D Ball Physics and Interactive Bat/Bowl Mechanics). Outcome: Created SimpleBallPhysics, InputRouter, pitch cursor, release meter. MatchEngine extended with AWAITING_SHOT state and timing-based resolution.
 
 - 2026-09-18: User prompt: Execute Phase 6 (Android Nearby Connections Bridge). Outcome: Full P2P abstraction layer with mock, native Kotlin plugin, GDScript bridge, and headless test verification.
+
+- 2026-09-18: User prompt: Execute Phase 7 (Real Roster & Team Data Integration). Outcome: Built JSON schemas, payload database, DataLoader Autoload, and wired them across UI and match state. Real player names and handedness logic now drive the animations.

@@ -180,7 +180,9 @@ func _stop_release_meter():
 	}
 
 	# Play bowler run-up animation
-	animation_controller.play_bowl_sequence()
+	var bowler_data = engine.state.get_current_bowler()
+	var is_left_arm = bowler_data.get("bat_hand", "R") == "L"
+	animation_controller.play_bowl_sequence(is_left_arm)
 	var bowler = animation_controller.bowler_sprite
 	var orig_y = bowler.position.y
 	var tween = create_tween()
@@ -273,10 +275,12 @@ func _on_shot_played(shot_data: Dictionary):
 
 func _update_ui():
 	scorecard.update_score(engine.state.runs, engine.state.wickets, engine.state.get_overs_string())
+	var striker = engine.state.get_current_striker()
+	var bowler = engine.state.get_current_bowler()
 	scorecard.update_stats(
-		engine.state.runs, engine.state.balls_bowled,
-		0, 0,
-		engine.state.runs, engine.state.wickets, engine.state.get_overs_string()
+		striker.get("name", "Batsman"), engine.state.runs, engine.state.balls_bowled,
+		"Non-Striker", 0, 0,
+		bowler.get("name", "Bowler"), engine.state.runs, engine.state.wickets, engine.state.get_overs_string()
 	)
 
 
@@ -286,13 +290,17 @@ func _on_innings_started(innings: int):
 
 func _on_runs_scored(amount: int, is_extra: bool):
 	print("Client: Scored ", amount)
-	animation_controller.play_outcome(amount, "")
+	var striker_data = engine.state.get_current_striker()
+	var is_left_handed = striker_data.get("bat_hand", "R") == "L"
+	animation_controller.play_outcome(amount, "", is_left_handed)
 	scorecard.add_timeline_event(str(amount))
 	_update_ui()
 
 func _on_wicket_fallen(type: String):
 	print("Client: WICKET ", type)
-	animation_controller.play_outcome(0, type)
+	var striker_data = engine.state.get_current_striker()
+	var is_left_handed = striker_data.get("bat_hand", "R") == "L"
+	animation_controller.play_outcome(0, type, is_left_handed)
 	scorecard.add_timeline_event("W")
 	_update_ui()
 

@@ -47,6 +47,10 @@ func start_match():
 	start_innings()
 
 func start_innings():
+	if GameManager.is_player_batting_first:
+		state.init_innings(GameManager.team_1, GameManager.team_2)
+	else:
+		state.init_innings(GameManager.team_2, GameManager.team_1)
 	current_state = State.OVER_START
 	emit_signal("innings_started", state.current_innings)
 	start_over()

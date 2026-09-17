@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Player",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["Batsman", "Bowler", "All-Rounder", "Wicketkeeper"]
+    },
+    "bat_hand": {
+      "type": "string",
+      "enum": ["R", "L"]
+    },
+    "bowl_type": {
+      "type": "string",
+      "enum": ["Pace", "Spin", "None"]
+    },
+    "skill_rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    }
+  },
+  "required": ["id", "name", "role", "bat_hand", "bowl_type", "skill_rating"]
+}

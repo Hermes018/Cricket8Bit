@@ -10,9 +10,9 @@ func update_score(runs: int, wickets: int, overs_str: String):
 	score_label.text = "%d / %d" % [runs, wickets]
 	overs_label.text = "Overs: %s" % overs_str
 
-func update_stats(striker_runs: int, striker_balls: int, non_striker_runs: int, non_striker_balls: int, bowler_runs: int, bowler_wkts: int, bowler_overs: String):
-	batsman_label.text = "Striker: %d (%d)\nNon-Striker: %d (%d)" % [striker_runs, striker_balls, non_striker_runs, non_striker_balls]
-	bowler_label.text = "Bowler: %d-%d (%s)" % [bowler_wkts, bowler_runs, bowler_overs]
+func update_stats(striker_name: String, striker_runs: int, striker_balls: int, non_striker_name: String, non_striker_runs: int, non_striker_balls: int, bowler_name: String, bowler_runs: int, bowler_wkts: int, bowler_overs: String):
+	batsman_label.text = "%s: %d (%d)\n%s: %d (%d)" % [striker_name, striker_runs, striker_balls, non_striker_name, non_striker_runs, non_striker_balls]
+	bowler_label.text = "%s: %d-%d (%s)" % [bowler_name, bowler_wkts, bowler_runs, bowler_overs]
 
 func add_timeline_event(event: String):
 	var lbl = Label.new()
