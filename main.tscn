@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df70hxt3u3p6l"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 221.0
+offset_top = 582.0
+offset_right = 478.0
+offset_bottom = 605.0
+text = "Cricket8Bit Phase 0 Build Working"

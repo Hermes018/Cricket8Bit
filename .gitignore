@@ -1,0 +1,20 @@
+# Godot 4+ specific ignores
+.godot/
+*.translation
+# We want to track export_presets.cfg for CI purposes, so NOT ignoring it.
+
+# Android build/export ignores
+build/
+android/build/
+*.apk
+*.aab
+*.keystore
+
+# Mac OS X
+.DS_Store
+
+# Local test files
+godot.zip
+godot_bin/
+templates.zip
+godot_templates/
