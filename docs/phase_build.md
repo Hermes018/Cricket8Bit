@@ -25,6 +25,7 @@
 - [x] Left/Right hand variants dynamically mirrored.
 - [x] Outcomes correctly wired to visual sequences.
 - [x] Exit check: Rigged visual sequence correctly displays a boundary, wicket, and dot ball in order.
+- [x] **Phase 3b**: Advanced Authentic Cricket mechanics (Wicketkeeper, Stumps nodes, LBW appeals, Third Umpire TV delays, bails flying).
 
 ## Phase 4
 - [ ] Menu system, match setup flow, custom fielding placement UI, scorecard/stats screens.

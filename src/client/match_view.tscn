@@ -38,6 +38,14 @@ scale = Vector2(3, 3)
 position = Vector2(350, 40)
 scale = Vector2(3, 3)
 
+[node name="Stumps" type="AnimatedSprite2D" parent="Pitch"]
+position = Vector2(240, 440)
+scale = Vector2(3, 3)
+
+[node name="Wicketkeeper" type="AnimatedSprite2D" parent="Pitch"]
+position = Vector2(240, 470)
+scale = Vector2(3, 3)
+
 [node name="Batsman" type="AnimatedSprite2D" parent="Pitch"]
 position = Vector2(240, 440)
 scale = Vector2(3, 3)
@@ -57,10 +65,12 @@ offset_right = 650.0
 offset_bottom = 700.0
 text = "BOWL BALL"
 
-[node name="AnimationController" type="Node" parent="." node_paths=PackedStringArray("bowler_sprite", "batsman_sprite", "fielder_sprite", "umpire_sprite", "crowd_sprite")]
+[node name="AnimationController" type="Node" parent="." node_paths=PackedStringArray("bowler_sprite", "batsman_sprite", "fielder_sprite", "umpire_sprite", "crowd_sprite", "keeper_sprite", "stumps_sprite")]
 script = ExtResource("3_ghi")
 bowler_sprite = NodePath("../Pitch/Bowler")
 batsman_sprite = NodePath("../Pitch/Batsman")
 fielder_sprite = NodePath("../Pitch/Fielder")
 umpire_sprite = NodePath("../Pitch/Umpire")
 crowd_sprite = NodePath("../Pitch/Crowd")
+keeper_sprite = NodePath("../Pitch/Wicketkeeper")
+stumps_sprite = NodePath("../Pitch/Stumps")

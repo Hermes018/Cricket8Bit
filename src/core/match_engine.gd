@@ -65,18 +65,19 @@ func resolve_ball():
 	var is_rigged = false
 	var total_balls = state.total_overs * 6 + state.balls_bowled
 	if total_balls == 0:
-		# Ball 1: 6 runs
-		state.add_runs(6)
-		emit_signal("runs_scored", 6, false)
+		# Ball 1: LBW
+		state.add_wicket()
+		emit_signal("wicket_fallen", "lbw")
 		is_rigged = true
 	elif total_balls == 1:
-		# Ball 2: Wicket (Caught)
+		# Ball 2: Stumped
 		state.add_wicket()
-		emit_signal("wicket_fallen", "caught")
+		emit_signal("wicket_fallen", "stumped")
 		is_rigged = true
 	elif total_balls == 2:
-		# Ball 3: Dot ball
-		emit_signal("runs_scored", 0, false)
+		# Ball 3: Bowled
+		state.add_wicket()
+		emit_signal("wicket_fallen", "bowled")
 		is_rigged = true
 		
 	if not is_rigged:
