@@ -1,10 +1,10 @@
 # Phase Build Checklist
 
 ## Phase 0
-- [ ] Repo scaffold, Godot project with Web + Android export presets.
-- [ ] Web build with PWA/offline support enabled.
-- [ ] Doc system files created, lint/format config, security baseline.
-- [ ] Exit check: Web export succeeds and passes offline-reload test. Android export succeeds locally (or via CI).
+- [x] Repo scaffold, Godot project with Web + Android export presets.
+- [x] Web build with PWA/offline support enabled.
+- [x] Doc system files created, lint/format config, security baseline.
+- [x] Exit check: Web export succeeds and passes offline-reload test. Android export succeeds locally (or via CI).
 
 ## Phase 1
 - [ ] MatchEngine core loop for one format (T20).
