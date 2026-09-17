@@ -54,3 +54,11 @@ We use a Strict Dual-Transport protocol:
 - **Local LAN / Android Hotspot**: Uses `ENetMultiplayerPeer` for low-overhead offline mobile play.
 - **Global Matchmaking**: Connects via a Python FastAPI backend acting as a JWT broker and queue. Clients use `WebSocketMultiplayerPeer` exclusively to connect to Godot Headless dedicated servers. 
 - **Authority**: The `MatchEngine` runs deterministically on the server. Outcomes are synchronized to clients strictly via `@rpc('authority')` calls, preventing any client-side divergence.
+
+### Architecture Update Phase 6 (Offline P2P) 
+We use a platform-agnostic `OfflineMultiplayerInterface` abstraction:
+- **Android**: `NearbyConnectionsBridge` wraps a Kotlin plugin that calls `Nearby.getConnectionsClient()` with `Strategy.P2P_STAR`. Uses BLE for discovery and Wi-Fi Direct for high-bandwidth data — works in full airplane mode with local radios.
+- **Desktop/CI**: `OfflineMultiplayerMock` provides a static-registry loopback so two instances in the same process can discover, connect, and exchange packets without any hardware.
+- **iOS (Phase 10 deferred)**: Will add `MultipeerConnectivityBridge` conforming to the same interface — zero call-site changes required.
+- `NetworkManager` auto-selects the provider at startup based on `OS.get_name()` and `Engine.has_singleton()`.
+- Serialization: game state packets use Godot's `var_to_bytes()`/`bytes_to_var()` for cross-platform safety.

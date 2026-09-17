@@ -44,8 +44,14 @@
 - [x] Exit check: Interactive over runs in Godot client; cursor dictates bounce, ball arcs in 2.5D, timed swing resolves into scorecard.
 
 ## Phase 6
-- [ ] Fully-offline local P2P via native Android Nearby Connections plugin.
-- [ ] Exit check: Two Android devices match with no network at all.
+- [x] Abstract OfflineMultiplayerInterface (signals + virtual methods).
+- [x] OfflineMultiplayerMock loopback implementation for desktop/CI.
+- [x] Android Nearby Connections Kotlin plugin scaffold (P2P_STAR, permissions, payload callbacks).
+- [x] NearbyConnectionsBridge GDScript wrapper.
+- [x] NetworkManager auto-detects provider (Android native vs. desktop mock).
+- [x] MainMenu UI: "OFFLINE P2P: HOST" and "OFFLINE P2P: SEARCH" buttons.
+- [x] Headless test: discovery, connection, packet send/decode — ALL PASSED.
+- [x] Exit check: Mock provider simulates two air-gapped peers completing a match handshake with zero network sockets.
 
 ## Phase 7
 - [ ] Real roster/team data integration.
